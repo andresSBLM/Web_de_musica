@@ -1,0 +1,4 @@
+[
+    { "id": 1, "artista": "Yo", "archivo": "mp3/cancion1.mp3" },
+    { "id": 2, "artista": "Yo", "archivo": "mp3/cancion2.mp3" }
+]

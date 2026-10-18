@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi propia web de música.">
+    <title>Mi reproductor de música</title>
+</head>
+
+<body>
+    <header>
+        <h1>Reproductor de música</h1>
+        <p>Bienvenido a mi reproductor de música.</p>
+    </header>
+    <main>
+        <div id="lista"></div>
+    </main>
+    <script>
+        async function cargar() {
+
+            const respuesta = await fetch("mp3/canciones.json");
+            const canciones = await respuesta.json();
+            for (let x = 0; x < canciones.length; x++) {
+                const audio = document.createElement("audio");
+                const salto = document.createElement("br")
+                audio.controls = true;
+                audio.src = canciones[x].archivo;
+                const lista = document.getElementById("lista");
+                lista.appendChild(audio);
+                lista.append(salto);
+            }
+
+        }
+        cargar();
+    </script>
+</body>
+
+</html>
