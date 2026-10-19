@@ -1,0 +1,10 @@
+# Ignorar archivos de audio por extensión
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+*.m4a
+
+# O si tienes todas las canciones en una carpeta específica (ejemplo: /musica)
+/musica/
