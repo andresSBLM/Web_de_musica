@@ -1,39 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mi propia web de música.">
     <title>Mi reproductor de música</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
+    <header id="cabecera">
         <h1>Reproductor de música</h1>
         <p>Bienvenido a mi reproductor de música.</p>
     </header>
-    <main>
-        <div id="lista"></div>
-    </main>
-    <script>
-        async function cargar() {
+    <main id="principal">
+        <section id="amor">
+            <h2>Canciones de Amor</h2>
+        </section>
+        <section id="desamor">
+            <h2>Canciones de Desamor</h2>
+        </section>
+        <section id="fiesta">
+            <h2>Canciones de Fiesta</h2>
+        </section>
+        <section id="motivador">
+            <h2>Canciones Motivadoras</h2>
+        </section>
+        <script>
+            async function cargar() {
 
-            const respuesta = await fetch("mp3/canciones.json");
-            const canciones = await respuesta.json();
-            for (let x = 0; x < canciones.length; x++) {
-                const audio = document.createElement("audio");
-                const salto = document.createElement("br")
-                audio.controls = true;
-                audio.src = canciones[x].archivo;
-                const lista = document.getElementById("lista");
-                lista.appendChild(audio);
-                lista.append(salto);
+                const respuesta = await fetch("mp3/canciones.json", { cache: "no-store" });
+                const canciones = await respuesta.json();
+                const amor = document.getElementById("amor");
+                const desamor = document.getElementById("desamor");
+                const fiesta = document.getElementById("fiesta");
+                const motivador = document.getElementById("motivador");
+
+                for (const cancion of canciones) {
+                    const contenedor = document.createElement("article");
+                    const titulo = document.createElement("h3");
+                    const audio = document.createElement("audio");
+
+                    titulo.textContent = cancion.titulo;
+                    audio.controls = true;
+                    audio.preload = "none";
+                    audio.src = cancion.archivo;
+                    contenedor.append(titulo, audio);
+
+                    switch (cancion.tema) {
+                        case "amor": amor.append(contenedor); break;
+                        case "desamor": desamor.append(contenedor); break;
+                        case "fiesta": fiesta.append(contenedor); break;
+                        case "motivador": motivador.append(contenedor); break;
+                    }
+                    
+                }
+
             }
-
-        }
-        cargar();
-    </script>
+            cargar();
+        </script>
+    </main>
 </body>
 
 </html>

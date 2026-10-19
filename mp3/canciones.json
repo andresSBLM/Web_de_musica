@@ -1,4 +1,16 @@
 [
-    { "id": 1, "artista": "Yo", "archivo": "mp3/cancion1.mp3" },
-    { "id": 2, "artista": "Yo", "archivo": "mp3/cancion2.mp3" }
+    { "id": 1, "titulo": "Amor Inexplicable", "tema": "amor", "archivo": "mp3/Amor Inexplicable (1).mp3" },
+    { "id": 2, "titulo": "Bésame, bésame", "tema": "amor", "archivo": "mp3/Bésame, bésame.mp3" },
+    { "id": 3, "titulo": "Cuál es mi papel aquí", "tema": "desamor", "archivo": "mp3/Cual es mi papel aqui.mp3" },
+    { "id": 4, "titulo": "Cubatas Infinito", "tema": "fiesta", "archivo": "mp3/Cubatas Infinito.mp3" },
+    { "id": 5, "titulo": "La reina del show", "tema": "fiesta", "archivo": "mp3/La reina del show (1).mp3" },
+    { "id": 6, "titulo": "Lo que no pasó", "tema": "desamor", "archivo": "mp3/Lo que no pasó..mp3" },
+    { "id": 7, "titulo": "Mi hilo rojo", "tema": "amor", "archivo": "mp3/Mi hilo rojo.mp3" },
+    { "id": 8, "titulo": "Mi mayor sacrilegio", "tema": "desamor", "archivo": "mp3/Mi mayor sacrilegio.mp3" },
+    { "id": 9, "titulo": "Mi reina", "tema": "motivador", "archivo": "mp3/MI reina (1).mp3" },
+    { "id": 10, "titulo": "Mira Cima", "tema": "motivador", "archivo": "mp3/Mira Cima.mp3" },
+    { "id": 11, "titulo": "Precio que Sueltas", "tema": "desamor", "archivo": "mp3/Precio que Sueltas.mp3" },
+    { "id": 12, "titulo": "Sin un plan", "tema": "fiesta", "archivo": "mp3/Sin un plan (5).mp3" },
+    { "id": 13, "titulo": "Veneno Que Quiero Tomar", "tema": "fiesta", "archivo": "mp3/Veneno Que Quiero Tomar.mp3" },
+    { "id": 14, "titulo": "Verano Inolvidable", "tema": "fiesta", "archivo": "mp3/Verano Inolvidable.mp3" }
 ]

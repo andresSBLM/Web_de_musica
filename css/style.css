@@ -1,0 +1,133 @@
+/*Ajustes generales */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --cabecera-fondo: linear-gradient(rgb(255, 192, 203),rgb(128, 0, 128));
+    --main-fondo: linear-gradient(purple, black);
+    --section-amor: linear-gradient(pink, red);
+    --section-desamor: linear-gradient(rgb(144, 217, 216), rgb(16, 16, 135));
+    --section-fiesta: linear-gradient(yellow, red);
+    --section-motivador: linear-gradient(green, black);
+    --h1-color: white;
+    --audio-fondo-amor: linear-gradient(-90deg, pink, red);
+    --audio-fondo-desamor: linear-gradient(-90deg, rgb(144, 217, 216), rgb(16, 16, 135));
+    --audio-fondo-fiesta: linear-gradient(-90deg,yellow, red);
+    --audio-fondo-motivador: linear-gradient(-90deg,green, black);
+    --cabecera-p-color: rgb(241, 234, 156);
+    --fuente: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    --bordes: black;
+    --sombras-n: black;
+    --sombras-b: white;
+    --sombras-p: purple;
+    --sombras-a: blue;
+    --blanco: white;
+    --negro: black;
+
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+}
+
+
+/*Bloque de cabecera*/
+
+#cabecera {
+    background: var(--cabecera-fondo);
+}
+
+#cabecera h1 {
+    font-size: 50px;
+    margin-top: 0;
+    color: var(--h1-color);
+    padding-top: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 2px var(--sombras-p);
+}
+
+#cabecera p {
+    padding-bottom: 30px;
+    text-align: center;
+    color: var(--cabecera-p-color);
+    text-shadow: 2px 2px 2px var(--sombras-n);
+    margin-bottom: 0;
+}
+
+/*Bloque main */
+
+#principal {
+    background: var(--main-fondo);
+    text-align: center;
+    min-height: 100vh;
+}
+
+#principal h3 {
+    margin: 0;
+    padding: 10px 0 10px 0;
+    color: var(--blanco);
+    text-shadow: 1px 1px 2px var(--sombras-a);
+}
+
+#principal article {
+    display: inline-block;
+    width: 45%;
+    margin: 5px;
+}
+
+#principal audio {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/*bloque de sections */
+
+section {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 0;
+    border-radius: 50px;
+}
+
+section h2 {
+    color: var(--blanco);
+    text-shadow: 2px 2px 2px var(--sombras-n);
+}
+
+#amor {
+    background: var(--section-amor);
+    margin-top: 0;
+    padding-top: 20px;
+    --fondo-audio: var(--audio-fondo-amor);
+}
+
+
+#desamor {
+    background: var(--section-desamor);
+    --fondo-audio: var(--audio-fondo-desamor);
+}
+
+#fiesta {
+    background: var(--section-fiesta);
+    --fondo-audio: var(--audio-fondo-fiesta);
+}
+
+#motivador {
+    background: var(--section-motivador);
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    --fondo-audio: var(--audio-fondo-motivador);
+}
+
+section audio {
+    background: var(--fondo-audio);
+}
+
