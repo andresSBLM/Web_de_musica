@@ -9,6 +9,7 @@
     --nav-fondo: linear-gradient(rgb(142, 246, 104), rgb(255, 255, 255));
     --main-fondo: linear-gradient( rgb(142, 246, 104) , rgb(1, 1, 1) );
     --a-fondo: rgb(83, 83, 181);
+    --ul-fondo: rgba(99, 99, 213, 0.142);
     --h1-color: white;
     --audio-fondo-amor: linear-gradient(-90deg, rgba(255, 192, 203, 0.755), rgba(255, 0, 0, 0.738));
     --audio-fondo-desamor: linear-gradient(-90deg, rgba(144, 217, 216, 0.759), rgba(16, 16, 135, 0.797));
@@ -88,6 +89,7 @@ body {
 }
 
 #menu ul {
+    background: var(--ul-fondo);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
