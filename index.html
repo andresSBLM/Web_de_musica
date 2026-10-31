@@ -15,29 +15,14 @@
         <p>Bienvenido a mi reproductor de música.</p>
     </header>
     <nav  id="menu">
-        <ul>
-            <li><a href="#amor">Amor</a></li>
-            <li><a href="#desamor">Desamor</a></li>
-            <li><a href="#fiesta">Fiesta</a></li>
-            <li><a href="#motivador">Motivadoras</a></li>
+        <ul id="contenedor_li">
+            
         </ul>
     </nav>
     <main id="principal">
-        <section id="amor">
-            <h2>Canciones de Amor</h2>
-        </section>
-        <section id="desamor">
-            <h2>Canciones de Desamor</h2>
-        </section>
-        <section id="fiesta">
-            <h2>Canciones de Fiesta</h2>
-        </section>
-        <section id="motivador">
-            <h2>Canciones Motivadoras</h2>
-        </section>
         <script>
             async function cargar() {
-
+                const generos = [];
                 const respuesta = await fetch("mp3/canciones.json", { cache: "no-store" });
                 const canciones = await respuesta.json();
                 const amor = document.getElementById("amor");
@@ -45,27 +30,47 @@
                 const fiesta = document.getElementById("fiesta");
                 const motivador = document.getElementById("motivador");
 
+
+                for (const cancion of canciones) {
+                    if (!generos.includes(cancion.tema)) {
+                        generos.push(cancion.tema);
+                    }
+
+                }
+
+                const main = document.getElementById("principal");
+                const ul = document.getElementById("contenedor_li");
+                for (let tema of generos) {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.setAttribute("href", `#${tema}`);
+                    a.textContent = tema;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+
+                    const seccion = document.createElement("section");
+                    const h2 = document.createElement("h2");
+                    seccion.id = tema;
+                    h2.textContent = `Canciones de ${tema}`;
+                    seccion.appendChild(h2);
+                    main.appendChild(seccion);
+                }
+
                 for (const cancion of canciones) {
                     const contenedor = document.createElement("article");
                     const titulo = document.createElement("h3");
                     const audio = document.createElement("audio");
 
+                    
+                    const caja = document.getElementById(cancion.tema);
                     titulo.textContent = cancion.titulo;
                     audio.controls = true;
                     audio.preload = "none";
                     audio.src = cancion.archivo;
                     contenedor.append(titulo, audio);
-
-                    switch (cancion.tema) {
-                        case "amor": amor.append(contenedor); break;
-                        case "desamor": desamor.append(contenedor); break;
-                        case "fiesta": fiesta.append(contenedor); break;
-                        case "motivador": motivador.append(contenedor); break;
-                        default: console.log("Tema sin sección:", cancion.titulo, cancion.tema);
-                    }
-                    
+                    caja.appendChild(contenedor);
+                     
                 }
-
             }
             cargar();
         </script>
