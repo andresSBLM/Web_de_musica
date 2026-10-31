@@ -5,17 +5,15 @@
 }
 
 :root {
-    --cabecera-fondo: linear-gradient(rgb(255, 192, 203),rgb(128, 0, 128));
-    --main-fondo: linear-gradient(purple, black);
-    --section-amor: linear-gradient(pink, red);
-    --section-desamor: linear-gradient(rgb(144, 217, 216), rgb(16, 16, 135));
-    --section-fiesta: linear-gradient(yellow, red);
-    --section-motivador: linear-gradient(green, black);
+    --cabecera-fondo:linear-gradient( rgb(65, 70, 150), rgb(142, 246, 104));
+    --nav-fondo: linear-gradient(rgb(142, 246, 104), rgb(255, 255, 255));
+    --main-fondo: linear-gradient( rgb(142, 246, 104) , rgb(1, 1, 1) );
+    --a-fondo: rgb(83, 83, 181);
     --h1-color: white;
-    --audio-fondo-amor: linear-gradient(-90deg, pink, red);
-    --audio-fondo-desamor: linear-gradient(-90deg, rgb(144, 217, 216), rgb(16, 16, 135));
-    --audio-fondo-fiesta: linear-gradient(-90deg,yellow, red);
-    --audio-fondo-motivador: linear-gradient(-90deg,green, black);
+    --audio-fondo-amor: linear-gradient(-90deg, rgba(255, 192, 203, 0.755), rgba(255, 0, 0, 0.738));
+    --audio-fondo-desamor: linear-gradient(-90deg, rgba(144, 217, 216, 0.759), rgba(16, 16, 135, 0.797));
+    --audio-fondo-fiesta: linear-gradient(-90deg,rgba(255, 255, 0, 0.708), rgba(255, 0, 0, 0.774));
+    --audio-fondo-motivador: linear-gradient(-90deg,rgba(3, 245, 3, 0.74), rgba(43, 124, 6, 0.745));
     --cabecera-p-color: rgb(241, 234, 156);
     --fuente: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
@@ -29,11 +27,32 @@
 
 }
 
+
+
+/*Configuración global */
+
 body {
     margin: 0;
     font-family: var(--fuente);
+    display: grid;
+    grid-template-areas: 
+    "cabecera cabecera "
+    "menu principal";
+    grid-template-columns: 250px 1fr;
+    min-width: 800px;
 }
 
+#cabecera {
+    grid-area: cabecera;
+}
+
+#menu {
+    grid-area: menu;
+}
+
+#principal {
+    grid-area: principal;
+}
 
 /*Bloque de cabecera*/
 
@@ -48,6 +67,7 @@ body {
     padding-top: 40px;
     text-align: center;
     text-shadow: 2px 2px 2px var(--sombras-p);
+    margin-bottom: 0;
 }
 
 #cabecera p {
@@ -56,14 +76,65 @@ body {
     color: var(--cabecera-p-color);
     text-shadow: 2px 2px 2px var(--sombras-n);
     margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/*Bloque de menu */
+
+#menu {
+    background: var(--nav-fondo);
+    margin: 0;
+}
+
+#menu ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: sticky;
+    top: 10px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;                 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.9);
+}
+
+#menu li {
+    display: block;
+}
+
+#menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: bold;
+    background-color: var(--a-fondo);
+    padding: 7px;
+    border-radius: 10px ;
+    box-shadow: 2px 2px 2px 2px rgb(82, 139, 196),
+                inset 2px 2px 4px 1px rgb(231, 243, 245);
+}
+
+#menu a:hover {
+    box-shadow: 2px 2px 4px 2px rgb(231, 243, 245),
+                inset 2px 2px 2px 2px rgb(82, 139, 196);
+    transform: translateY(4px);
 }
 
 /*Bloque main */
 
 #principal {
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
     background: var(--main-fondo);
     text-align: center;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
 }
 
 #principal h3 {
@@ -71,12 +142,13 @@ body {
     padding: 10px 0 10px 0;
     color: var(--blanco);
     text-shadow: 1px 1px 2px var(--sombras-a);
+    text-align: left;
 }
 
 #principal article {
-    display: inline-block;
-    width: 45%;
-    margin: 5px;
+    display: grid;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #principal audio {
@@ -89,12 +161,9 @@ body {
 /*bloque de sections */
 
 section {
-    max-width: 80%;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 20px 0 20px 0;
-    border-radius: 50px;
+    width: 100%; 
+    border-radius: 12px;  
+    padding-bottom: 20px;               
 }
 
 section h2 {
@@ -103,28 +172,28 @@ section h2 {
 }
 
 #amor {
-    background: var(--section-amor);
     margin-top: 0;
     padding-top: 20px;
     --fondo-audio: var(--audio-fondo-amor);
+    box-shadow: 0 8px 32px 0 rgba(255, 1, 1, 0.9);
 }
 
 
 #desamor {
-    background: var(--section-desamor);
     --fondo-audio: var(--audio-fondo-desamor);
+    box-shadow: 1px 8px 32px 0 rgba(2, 74, 255, 0.9);
 }
 
 #fiesta {
-    background: var(--section-fiesta);
     --fondo-audio: var(--audio-fondo-fiesta);
+    box-shadow: 0 8px 32px 0 rgba(255, 234, 1, 0.9);
 }
 
 #motivador {
-    background: var(--section-motivador);
     margin-bottom: 0;
     padding-bottom: 30px;
     --fondo-audio: var(--audio-fondo-motivador);
+    box-shadow: 0 8px 32px 0 rgba(57, 255, 2, 0.9);
 }
 
 section audio {

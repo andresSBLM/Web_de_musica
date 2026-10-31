@@ -14,6 +14,14 @@
         <h1>Reproductor de música</h1>
         <p>Bienvenido a mi reproductor de música.</p>
     </header>
+    <nav  id="menu">
+        <ul>
+            <li><a href="#amor">Amor</a></li>
+            <li><a href="#desamor">Desamor</a></li>
+            <li><a href="#fiesta">Fiesta</a></li>
+            <li><a href="#motivador">Motivadoras</a></li>
+        </ul>
+    </nav>
     <main id="principal">
         <section id="amor">
             <h2>Canciones de Amor</h2>
@@ -53,6 +61,7 @@
                         case "desamor": desamor.append(contenedor); break;
                         case "fiesta": fiesta.append(contenedor); break;
                         case "motivador": motivador.append(contenedor); break;
+                        default: console.log("Tema sin sección:", cancion.titulo, cancion.tema);
                     }
                     
                 }
