@@ -8,6 +8,10 @@
     --cabecera-fondo:linear-gradient( rgb(65, 70, 150), rgb(142, 246, 104));
     --nav-fondo: linear-gradient(rgb(142, 246, 104), rgb(255, 255, 255));
     --main-fondo: linear-gradient( rgb(142, 246, 104) , rgb(1, 1, 1) );
+    --fondo-amor: linear-gradient(rgba(255, 255, 255, 0.505), rgba(255, 0, 0, 0.39));
+    --fondo-desamor:  linear-gradient(rgba(255, 255, 255, 0.505), rgba(25, 120, 182, 0.39));
+    --fondo-fiesta: linear-gradient(rgba(255, 255, 255, 0.505), rgba(227, 227, 26, 0.39));
+    --fondo-motivador: linear-gradient(rgba(255, 255, 255, 0.505), rgba(22, 138, 29, 0.39));
     --a-fondo: rgb(83, 83, 181);
     --ul-fondo: rgba(99, 99, 213, 0.142);
     --h1-color: white;
@@ -124,6 +128,11 @@ body {
     transform: translateY(4px);
 }
 
+
+
+
+
+
 /*Bloque main */
 
 #principal {
@@ -160,6 +169,12 @@ body {
     border-radius: 20px;
 }
 
+
+
+
+
+
+
 /*bloque de sections */
 
 section {
@@ -174,6 +189,7 @@ section h2 {
 }
 
 #amor {
+    background: var(--fondo-amor);
     margin-top: 0;
     padding-top: 20px;
     --fondo-audio: var(--audio-fondo-amor);
@@ -182,16 +198,19 @@ section h2 {
 
 
 #desamor {
+    background: var(--fondo-desamor);
     --fondo-audio: var(--audio-fondo-desamor);
     box-shadow: 1px 8px 32px 0 rgba(2, 74, 255, 0.9);
 }
 
 #fiesta {
+    background: var(--fondo-fiesta);
     --fondo-audio: var(--audio-fondo-fiesta);
     box-shadow: 0 8px 32px 0 rgba(255, 234, 1, 0.9);
 }
 
 #motivador {
+    background: var(--fondo-motivador);
     margin-bottom: 0;
     padding-bottom: 30px;
     --fondo-audio: var(--audio-fondo-motivador);
